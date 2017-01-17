@@ -1,4 +1,4 @@
-<img src="https://github.com/MineScroll/Wings/blob/master/Logo.png" align="center" width="714" height="225" />
+<img src="https://github.com/utilForever/Wings/blob/master/Logo.png" align="center" width="714" height="225" />
 
 # Wings
 

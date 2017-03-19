@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <ROOT_DIR>C:\Visual-Studio-gtkmm\</ROOT_DIR>
+    <BIN_DIR>$(ROOT_DIR)bin\</BIN_DIR>
+    <LIB_DIR>$(ROOT_DIR)lib\</LIB_DIR>
+    <INCLUDE_DIR>$(ROOT_DIR)include\</INCLUDE_DIR>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(INCLUDE_DIR);$(INCLUDE_DIR)gtkmm;$(INCLUDE_DIR)glibmm;$(INCLUDE_DIR)sigc++;$(INCLUDE_DIR)cairomm;$(INCLUDE_DIR)pangomm;$(INCLUDE_DIR)atkmm;$(INCLUDE_DIR)cryptopp;$(INCLUDE_DIR)goocanvasmm;$(LIB_DIR)gtkmm\include;$(LIB_DIR)gdkmm\include;$(LIB_DIR)glibmm\include;$(LIB_DIR)giomm\include;$(LIB_DIR)sigc++\include;$(LIB_DIR)cairomm\include;$(LIB_DIR)pangomm\include;$(LIB_DIR)atkmm\include;$(LIB_DIR)goocanvasmm\include;$(INCLUDE_DIR)gtk;$(INCLUDE_DIR)glib;$(INCLUDE_DIR)cairo;$(INCLUDE_DIR)pango;$(INCLUDE_DIR)atk;$(INCLUDE_DIR)goocanvas;$(INCLUDE_DIR)gdk-pixbuf;$(INCLUDE_DIR)pixman;$(INCLUDE_DIR)iconv;$(INCLUDE_DIR)intl;$(INCLUDE_DIR)harfbuzz;$(INCLUDE_DIR)zlib;$(INCLUDE_DIR)fontconfig;$(INCLUDE_DIR)jpeg-turbo;$(INCLUDE_DIR)freetype;$(INCLUDE_DIR)png;$(INCLUDE_DIR)expat;$(INCLUDE_DIR)ffi;$(INCLUDE_DIR)tiff;$(INCLUDE_DIR)pcre;$(INCLUDE_DIR)bzip2;$(INCLUDE_DIR)gstreamer;$(INCLUDE_DIR)libxml;$(INCLUDE_DIR)dirnet;$(LIB_DIR)glib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4250;4290;4101;4244;4305;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PreprocessorDefinitions>BOOST_ALL_NO_LIB;WINVER=0x0A00;_WIN32_WINNT=0x0A00;DW=__pragma(warning( disable: 4309 4505 4250 )) __pragma(warning( push, 0 ));EW=__pragma(warning( default: 4309 4505 )) __pragma(warning( pop ));%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gtkmm.dll.lib;gdkmm.dll.lib;glibmm.dll.lib;giomm.dll.lib;cairomm.dll.lib;atkmm.dll.lib;pangomm.dll.lib;sigc++.dll.lib;cryptopp.lib;goocanvasmm.dll.lib;gtk.dll.lib;gdk.dll.lib;glib.dll.lib;gio.dll.lib;cairo.dll.lib;atk.dll.lib;pango.dll.lib;boost_atomic.lib;boost_chrono.lib;boost_container.lib;boost_context.lib;boost_coroutine.lib;boost_date_time.lib;boost_filesystem.lib;boost_graph.lib;boost_iostreams.lib;boost_locale.lib;boost_log.lib;boost_log_setup.lib;boost_math_c99.lib;boost_math_c99f.lib;boost_math_c99l.lib;boost_math_tr1.lib;boost_math_tr1f.lib;boost_math_tr1l.lib;boost_prg_exec_monitor.lib;boost_program_options.lib;boost_python.lib;boost_python3.lib;boost_random.lib;boost_regex.lib;boost_serialization.lib;boost_signals.lib;boost_system.lib;boost_thread.lib;boost_timer.lib;boost_unit_test_framework.lib;boost_wave.lib;boost_wserialization.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <AdditionalLibraryDirectories>$(LIB_DIR);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="ROOT_DIR">
+      <Value>$(ROOT_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BIN_DIR">
+      <Value>$(BIN_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LIB_DIR">
+      <Value>$(LIB_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="INCLUDE_DIR">
+      <Value>$(INCLUDE_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

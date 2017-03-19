@@ -58,6 +58,7 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\Libraries\gtkmm\Debug-x86.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -75,7 +76,17 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>BOOST_ALL_NO_LIB;WINVER=0x0A00;_WIN32_WINNT=0x0A00;DW=__pragma(warning( disable: 4309 4505 4250 )) __pragma(warning( push, 0 ));EW=__pragma(warning( default: 4309 4505 )) __pragma(warning( pop ));%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4290;4101;4244;4305;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(LIB_DIR);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtkmm.dll.lib;gdkmm.dll.lib;glibmm.dll.lib;giomm.dll.lib;cairomm.dll.lib;atkmm.dll.lib;pangomm.dll.lib;sigc++.dll.lib;cryptopp.lib;goocanvasmm.dll.lib;gtk.dll.lib;gdk.dll.lib;glib.dll.lib;gio.dll.lib;cairo.dll.lib;atk.dll.lib;pango.dll.lib;boost_atomic.lib;boost_chrono.lib;boost_container.lib;boost_context.lib;boost_coroutine.lib;boost_date_time.lib;boost_filesystem.lib;boost_graph.lib;boost_iostreams.lib;boost_locale.lib;boost_log.lib;boost_log_setup.lib;boost_math_c99.lib;boost_math_c99f.lib;boost_math_c99l.lib;boost_math_tr1.lib;boost_math_tr1f.lib;boost_math_tr1l.lib;boost_prg_exec_monitor.lib;boost_program_options.lib;boost_python.lib;boost_python3.lib;boost_random.lib;boost_regex.lib;boost_serialization.lib;boost_signals.lib;boost_system.lib;boost_thread.lib;boost_timer.lib;boost_unit_test_framework.lib;boost_wave.lib;boost_wserialization.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -111,6 +122,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Sources\main.cpp" />
+    <ClCompile Include="..\..\Sources\MainWindow.cpp" />
+    <ClCompile Include="..\..\Sources\stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Sources\MainWindow.h" />
+    <ClInclude Include="..\..\Sources\stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
